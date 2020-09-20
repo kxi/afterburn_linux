@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+*.log
+*.err
+miner1.json
+miner2.json
+miner3.json
+miner4.json
+miner5.json
+kai_test_miner.json

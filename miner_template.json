@@ -1,0 +1,26 @@
+{
+  "gpu0":{
+    "cpu_clock_offset":"+30",
+    "mem_clock_offset":"+350"
+  },
+  "gpu1":{
+    "cpu_clock_offset":"+30",
+    "mem_clock_offset":"+350"
+  },
+  "gpu2":{
+    "cpu_clock_offset":"+30",
+    "mem_clock_offset":"+350"
+  },
+  "gpu3":{
+    "cpu_clock_offset":"+30",
+    "mem_clock_offset":"+350"
+  },
+  "gpu4":{
+    "cpu_clock_offset":"+30",
+    "mem_clock_offset":"+350"
+  },
+  "gpu5":{
+    "cpu_clock_offset":"+30",
+    "mem_clock_offset":"+350"
+  }
+}
