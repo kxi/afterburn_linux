@@ -76,14 +76,13 @@ def main():
             print(f"Reset Memory Offset: {mem_clock_offset}")
 
 
-        if current_memory_clock<=max_memory_clock:
-            process = subprocess.Popen(f"{NV_prefix} nvidia-settings -a \"[gpu:{i}]/GPUGraphicsClockOffset[3]={clock_offset}\" -a \"[gpu:{i}]/GPUMemoryTransferRateOffset[3]={mem_clock_offset}\"", stdout = subprocess.PIPE, stderr = subprocess.PIPE, shell=True)
-            output, error = process.communicate()
-            if output:
-                LOGGER.info(f"[ACTION]: GPU #{i} {output.decode().strip()}")
-                print(f"[ACTION]: GPU #{i} {output.decode().strip()}")
-            if error:
-                LOGGER.critical(f"[ERROR]: GPU #{i} {error.decode().strip()}")
-                print(f"[ERROR]: GPU #{i} {error.decode().strip()}")
+        process = subprocess.Popen(f"{NV_prefix} nvidia-settings -a \"[gpu:{i}]/GPUGraphicsClockOffset[3]={clock_offset}\" -a \"[gpu:{i}]/GPUMemoryTransferRateOffset[2]={mem_clock_offset}\" -a \"[gpu:{i}]/GPUMemoryTransferRateOffset[3]={mem_clock_offset}\"", stdout = subprocess.PIPE, stderr = subprocess.PIPE, shell=True)
+        output, error = process.communicate()
+        if output:
+            LOGGER.info(f"[ACTION]: GPU #{i} {output.decode().strip()}")
+            print(f"[ACTION]: GPU #{i} {output.decode().strip()}")
+        if error:
+            LOGGER.critical(f"[ERROR]: GPU #{i} {error.decode().strip()}")
+            print(f"[ERROR]: GPU #{i} {error.decode().strip()}")
 
 main()
